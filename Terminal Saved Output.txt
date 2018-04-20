@@ -1,0 +1,693 @@
+Last login: Thu Apr 12 15:05:43 on console
+grc-sudan:~ cleonesc$ which6
+-bash: which6: command not found
+grc-sudan:~ cleonesc$ which
+usage: which [-as] program ...
+grc-sudan:~ cleonesc$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+grc-sudan:~ cleonesc$ which
+usage: which [-as] program ...
+grc-sudan:~ cleonesc$ which git
+/usr/bin/git
+grc-sudan:~ cleonesc$ git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+
+grc-sudan:~ cleonesc$ clear
+
+grc-sudan:~ cleonesc$ git config --global user.name "Christian Leone"
+grc-sudan:~ cleonesc$ git config -- global christian.leone.829@gmail.com
+fatal: not in a git directory
+grc-sudan:~ cleonesc$ git config --global user.email christian.leone.829@gmail.com
+grc-sudan:~ cleonesc$ git help
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+grc-sudan:~ cleonesc$ [~] mkdir -p repos/website
+-bash: [~]: command not found
+grc-sudan:~ cleonesc$ [~]$ mkdir -p repos/website
+-bash: [~]$: command not found
+grc-sudan:~ cleonesc$ ~/.gitconfig
+-bash: /Users/cleonesc/.gitconfig: Permission denied
+grc-sudan:~ cleonesc$ ~/ .gitconfig
+-bash: /Users/cleonesc/: is a directory
+grc-sudan:~ cleonesc$ [~]$ mkdir -p repos/website
+-bash: [~]$: command not found
+grc-sudan:~ cleonesc$ mkdir -p respos/website
+grc-sudan:~ cleonesc$ cd repos/website/
+-bash: cd: repos/website/: No such file or directory
+grc-sudan:~ cleonesc$ mkdir -p repos/website
+grc-sudan:~ cleonesc$ cd repos/website/
+grc-sudan:website cleonesc$ git init
+Initialized empty Git repository in /Users/cleonesc/repos/website/.git/
+grc-sudan:website cleonesc$ ls -a
+.	..	.git
+grc-sudan:website cleonesc$ ls
+grc-sudan:website cleonesc$ cat
+^C             
+grc-sudan:website cleonesc$ touch index.html
+grc-sudan:website cleonesc$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+grc-sudan:website cleonesc$ git add -A
+grc-sudan:website cleonesc$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   index.html
+
+grc-sudan:website cleonesc$ git commit -m "Initialize repository"
+[master (root-commit) 8974208] Initialize repository
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+grc-sudan:website cleonesc$ git log
+commit 897420833fccf1471c91c751a6a2e54cc2a0960a (HEAD -> master)
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:13:37 2018 -0700
+
+    Initialize repository
+grc-sudan:website cleonesc$ touch
+usage:
+touch [-A [-][[hh]mm]SS] [-acfhm] [-r file] [-t [[CC]YY]MMDDhhmm[.SS]] file ...
+grc-sudan:website cleonesc$ echo "hello, world" > index.html
+grc-sudan:website cleonesc$ git diff
+diff --git a/index.html b/index.html
+index e69de29..4b5fa63 100644
+--- a/index.html
++++ b/index.html
+@@ -0,0 +1 @@
++hello, world
+grc-sudan:website cleonesc$ git log
+commit 897420833fccf1471c91c751a6a2e54cc2a0960a (HEAD -> master)
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:13:37 2018 -0700
+
+    Initialize repository
+grc-sudan:website cleonesc$ git add -A
+grc-sudan:website cleonesc$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   index.html
+
+grc-sudan:website cleonesc$ git commit -a -m "Add content to index.html"
+[master 9972059] Add content to index.html
+ 1 file changed, 1 insertion(+)
+grc-sudan:website cleonesc$ git diff
+grc-sudan:website cleonesc$ git diff --staged
+grc-sudan:website cleonesc$ git log
+commit 9972059044c7365778396124e09665168ce6e929 (HEAD -> master)
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:30:20 2018 -0700
+
+    Add content to index.html
+
+commit 897420833fccf1471c91c751a6a2e54cc2a0960a
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:13:37 2018 -0700
+
+    Initialize repository
+grc-sudan:website cleonesc$ touch baz
+grc-sudan:website cleonesc$ git commit -am "Add bazz"
+On branch master
+Untracked files:
+	baz
+
+nothing added to commit but untracked files present
+grc-sudan:website cleonesc$ git add -A 
+grc-sudan:website cleonesc$ git log
+commit 9972059044c7365778396124e09665168ce6e929 (HEAD -> master)
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:30:20 2018 -0700
+
+    Add content to index.html
+
+commit 897420833fccf1471c91c751a6a2e54cc2a0960a
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:13:37 2018 -0700
+
+    Initialize repository
+grc-sudan:website cleonesc$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   baz
+
+grc-sudan:website cleonesc$ git add -A
+grc-sudan:website cleonesc$ git commit -m "Add bazz"
+[master 74f7a68] Add bazz
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 baz
+grc-sudan:website cleonesc$ git command --amend
+git: 'command' is not a git command. See 'git --help'.
+grc-sudan:website cleonesc$ git commit --amend
+[master 5cac639] Add baz
+ Date: Thu Apr 12 16:54:51 2018 -0700
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 baz
+grc-sudan:website cleonesc$ git log
+commit 5cac6395b681bef94d8430f5f1a9f6d3b5e74e48 (HEAD -> master)
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:54:51 2018 -0700
+
+    Add baz
+
+commit 9972059044c7365778396124e09665168ce6e929
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:30:20 2018 -0700
+
+    Add content to index.html
+
+commit 897420833fccf1471c91c751a6a2e54cc2a0960a
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:13:37 2018 -0700
+
+    Initialize repository
+grc-sudan:website cleonesc$ atom index.html
+grc-sudan:website cleonesc$ open index.html
+grc-sudan:website cleonesc$ <h1>hello, world</h1>
+-bash: syntax error near unexpected token `newline'
+grc-sudan:website cleonesc$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+grc-sudan:website cleonesc$ git diff
+diff --git a/index.html b/index.html
+index 4b5fa63..45d754a 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1 @@
+-hello, world
++<h1>hello, world</h1>
+grc-sudan:website cleonesc$ git commit -am "Added h1 tag"
+[master 4915f11] Added h1 tag
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+grc-sudan:website cleonesc$ git log -p
+commit 4915f11d252e9a66b061adb8825b99f05d87e269 (HEAD -> master)
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 17:13:13 2018 -0700
+
+    Added h1 tag
+
+diff --git a/index.html b/index.html
+index 4b5fa63..45d754a 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1 @@
+-hello, world
++<h1>hello, world</h1>
+
+commit 5cac6395b681bef94d8430f5f1a9f6d3b5e74e48
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:54:51 2018 -0700
+
+    Add baz
+
+diff --git a/baz b/baz
+new file mode 100644
+index 0000000..e69de29
+
+commit 9972059044c7365778396124e09665168ce6e929
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:30:20 2018 -0700
+
+    Add content to index.html
+
+diff --git a/index.html b/index.html
+index e69de29..4b5fa63 100644
+--- a/index.html
++++ b/index.html
+@@ -0,0 +1 @@
++hello, world
+
+commit 897420833fccf1471c91c751a6a2e54cc2a0960a
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:13:37 2018 -0700
+
+    Initialize repository
+
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000..e69de29
+grc-sudan:website cleonesc$ git diff
+diff --git a/index.html b/index.html
+index 45d754a..53e4db4 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1,3 @@
+ <h1>hello, world</h1>
++  <p> Call me Ishmael</p>
++  
+grc-sudan:website cleonesc$ gif diff
+-bash: gif: command not found
+grc-sudan:website cleonesc$ git diff
+diff --git a/index.html b/index.html
+index 45d754a..0f831f2 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1,10 @@
+-<h1>hello, world</h1>
++<!DOCTYPE html>
++  <html>
++  <head>
++    <title></title>
++  </head>
++  <body>
++    <h1>hello, world</h1>
++      <p> Call me Ishmael</p>
++    </body>
++</html>
+grc-sudan:website cleonesc$ git commit -am "Add some HTML structure"
+[master 2bb1084] Add some HTML structure
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+grc-sudan:website cleonesc$ git log -p
+commit 2bb1084eb4a9f00ddcc88fe5263271212468035e (HEAD -> master)
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 17:31:43 2018 -0700
+
+    Add some HTML structure
+
+diff --git a/index.html b/index.html
+index 45d754a..0f831f2 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1,10 @@
+-<h1>hello, world</h1>
++<!DOCTYPE html>
++  <html>
++  <head>
++    <title></title>
++  </head>
++  <body>
++    <h1>hello, world</h1>
++      <p> Call me Ishmael</p>
++    </body>
++</html>
+
+commit 4915f11d252e9a66b061adb8825b99f05d87e269
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 17:13:13 2018 -0700
+
+    Added h1 tag
+
+diff --git a/index.html b/index.html
+index 4b5fa63..45d754a 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1 @@
+-hello, world
++<h1>hello, world</h1>
+
+commit 5cac6395b681bef94d8430f5f1a9f6d3b5e74e48
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:54:51 2018 -0700
+
+    Add baz
+
+diff --git a/baz b/baz
+new file mode 100644
+index 0000000..e69de29
+
+commit 9972059044c7365778396124e09665168ce6e929
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:30:20 2018 -0700
+...skipping...
+commit 2bb1084eb4a9f00ddcc88fe5263271212468035e (HEAD -> master)
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 17:31:43 2018 -0700
+
+    Add some HTML structure
+
+diff --git a/index.html b/index.html
+index 45d754a..0f831f2 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1,10 @@
+-<h1>hello, world</h1>
++<!DOCTYPE html>
++  <html>
++  <head>
++    <title></title>
++  </head>
++  <body>
++    <h1>hello, world</h1>
++      <p> Call me Ishmael</p>
++    </body>
++</html>
+
+commit 4915f11d252e9a66b061adb8825b99f05d87e269
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 17:13:13 2018 -0700
+
+    Added h1 tag
+
+diff --git a/index.html b/index.html
+index 4b5fa63..45d754a 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1 @@
+-hello, world
++<h1>hello, world</h1>
+
+commit 5cac6395b681bef94d8430f5f1a9f6d3b5e74e48
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:54:51 2018 -0700
+
+    Add baz
+
+diff --git a/baz b/baz
+new file mode 100644
+index 0000000..e69de29
+
+commit 9972059044c7365778396124e09665168ce6e929
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:30:20 2018 -0700
+
+...skipping...
+commit 2bb1084eb4a9f00ddcc88fe5263271212468035e (HEAD -> master)
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 17:31:43 2018 -0700
+
+    Add some HTML structure
+
+diff --git a/index.html b/index.html
+index 45d754a..0f831f2 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1,10 @@
+-<h1>hello, world</h1>
++<!DOCTYPE html>
++  <html>
++  <head>
++    <title></title>
++  </head>
++  <body>
++    <h1>hello, world</h1>
++      <p> Call me Ishmael</p>
++    </body>
++</html>
+
+commit 4915f11d252e9a66b061adb8825b99f05d87e269
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 17:13:13 2018 -0700
+
+    Added h1 tag
+
+diff --git a/index.html b/index.html
+index 4b5fa63..45d754a 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1 @@
+-hello, world
++<h1>hello, world</h1>
+
+commit 5cac6395b681bef94d8430f5f1a9f6d3b5e74e48
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:54:51 2018 -0700
+
+    Add baz
+
+diff --git a/baz b/baz
+new file mode 100644
+index 0000000..e69de29
+
+commit 9972059044c7365778396124e09665168ce6e929
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:30:20 2018 -0700
+...skipping...
+commit 2bb1084eb4a9f00ddcc88fe5263271212468035e (HEAD -> master)
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 17:31:43 2018 -0700
+
+    Add some HTML structure
+
+diff --git a/index.html b/index.html
+index 45d754a..0f831f2 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1,10 @@
+-<h1>hello, world</h1>
++<!DOCTYPE html>
++  <html>
++  <head>
++    <title></title>
++  </head>
++  <body>
++    <h1>hello, world</h1>
++      <p> Call me Ishmael</p>
++    </body>
++</html>
+
+commit 4915f11d252e9a66b061adb8825b99f05d87e269
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 17:13:13 2018 -0700
+
+    Added h1 tag
+
+diff --git a/index.html b/index.html
+index 4b5fa63..45d754a 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1 @@
+-hello, world
++<h1>hello, world</h1>
+
+commit 5cac6395b681bef94d8430f5f1a9f6d3b5e74e48
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:54:51 2018 -0700
+
+    Add baz
+
+diff --git a/baz b/baz
+new file mode 100644
+index 0000000..e69de29
+
+commit 9972059044c7365778396124e09665168ce6e929
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:30:20 2018 -0700
+...skipping...
+commit 2bb1084eb4a9f00ddcc88fe5263271212468035e (HEAD -> master)
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 17:31:43 2018 -0700
+commit 2bb1084eb4a9f00ddcc88fe5263271212468035e (HEAD -> master)
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 17:31:43 2018 -0700
+
+    Add some HTML structure
+
+diff --git a/index.html b/index.html
+index 45d754a..0f831f2 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1,10 @@
+-<h1>hello, world</h1>
++<!DOCTYPE html>
++  <html>
++  <head>
++    <title></title>
++  </head>
++  <body>
++    <h1>hello, world</h1>
++      <p> Call me Ishmael</p>
++    </body>
++</html>
+
+commit 4915f11d252e9a66b061adb8825b99f05d87e269
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 17:13:13 2018 -0700
+
+    Added h1 tag
+
+diff --git a/index.html b/index.html
+index 4b5fa63..45d754a 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1 @@
+-hello, world
++<h1>hello, world</h1>
+
+commit 5cac6395b681bef94d8430f5f1a9f6d3b5e74e48
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:54:51 2018 -0700
+
+    Add baz
+
+diff --git a/baz b/baz
+new file mode 100644
+index 0000000..e69de29
+
+commit 9972059044c7365778396124e09665168ce6e929
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:30:20 2018 -0700
+grc-sudan:website cleonesc$ git remote add origin https://github.com/christianleone/website.git
+grc-sudan:website cleonesc$ git push -u origin master
+Username for 'https://github.com': christianleone
+Password for 'https://christianleone@github.com': 
+Counting objects: 14, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (14/14), 1.31 KiB | 1.31 MiB/s, done.
+Total 14 (delta 0), reused 0 (delta 0)
+To https://github.com/christianleone/website.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+grc-sudan:website cleonesc$ git log
+commit 2bb1084eb4a9f00ddcc88fe5263271212468035e (HEAD -> master, origin/master)
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 17:31:43 2018 -0700
+
+    Add some HTML structure
+
+commit 4915f11d252e9a66b061adb8825b99f05d87e269
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 17:13:13 2018 -0700
+
+    Added h1 tag
+
+commit 5cac6395b681bef94d8430f5f1a9f6d3b5e74e48
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:54:51 2018 -0700
+
+    Add baz
+
+commit 9972059044c7365778396124e09665168ce6e929
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:30:20 2018 -0700
+
+    Add content to index.html
+
+commit 897420833fccf1471c91c751a6a2e54cc2a0960a
+Author: Christian Leone <christian.leone.829@gmail.com>
+Date:   Thu Apr 12 16:13:37 2018 -0700
+
+    Initialize repository
+grc-sudan:website cleonesc$ atom README.md
+grc-sudan:website cleonesc$ git add -A
+grc-sudan:website cleonesc$ git commit -m "Add README file"
+[master b00cc4e] Add README file
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+ create mode 100644 README.md
+grc-sudan:website cleonesc$ git push
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 760 bytes | 760.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/christianleone/website.git
+   2bb1084..b00cc4e  master -> master
+grc-sudan:website cleonesc$ git commit -am "Added Git documentation"
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working tree clean
+grc-sudan:website cleonesc$ 
